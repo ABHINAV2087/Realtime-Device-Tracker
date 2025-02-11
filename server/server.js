@@ -11,10 +11,11 @@ app.use(cors());
 // Initialize Socket.IO with CORS options
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-device-tracker-project.vercel.app",
+    origin: ["https://realtime-device-tracker-project.vercel.app", "https://realtime-device-tracker-two.vercel.app"],
     methods: ["GET", "POST"]
   }
 });
+
 
 // Serve a simple response for root route
 app.get("/", (req, res) => {

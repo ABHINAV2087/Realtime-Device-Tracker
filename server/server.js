@@ -11,9 +11,14 @@ app.use(cors());
 // Initialize Socket.IO with CORS options
 const io = new Server(server, {
   cors: {
-    origin: "https://realtime-device-tracker-project.vercel.app", // Vite's default port
+    origin: "https://realtime-device-tracker-project.vercel.app",
     methods: ["GET", "POST"]
   }
+});
+
+// Serve a simple response for root route
+app.get("/", (req, res) => {
+  res.send("<h1>Realtime Device Tracker Server is Running!</h1>");
 });
 
 // Socket.IO connection handling

@@ -21,7 +21,7 @@ const Map = () => {
     }).addTo(map);
 
     // Initialize socket connection
-    socketRef.current = io('http://localhost:3000');
+    socketRef.current = io('https://realtime-device-tracker-ct1a.onrender.com');
 
     // Watch position and emit location
     if (navigator.geolocation) {
